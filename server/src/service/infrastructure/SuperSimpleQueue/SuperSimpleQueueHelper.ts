@@ -478,8 +478,7 @@ export class SuperSimpleQueueHelper implements ISuperSimpleQueueHelper {
 	private evaluateMonitorAction(statusChangeResult: any) {
 		const { statusChanged, monitor, prevStatus } = statusChangeResult;
 	
-		// 🚨 FIX: initializing → down should count as change
-		const effectiveStatusChanged =
+			const effectiveStatusChanged =
 			statusChanged || (prevStatus === "initializing" && monitor.status === "down");
 	
 		if (!effectiveStatusChanged) {
